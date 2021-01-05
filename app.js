@@ -49,7 +49,7 @@ const userManagerInfo = [
     },
     {
         type: 'input',
-        message: "What is your manager's id?",
+        message: "What is your manager's employee ID?",
         name: 'managerID'
     },
     {
@@ -73,6 +73,52 @@ const addEmployee = [
             'Intern',
             'None'
         ]
+    }
+];
+
+const questionsEng = [
+    {
+        type: 'input',
+        message: "What is the engineer's name?",
+        name: 'engName'
+    },
+    {
+        type: 'input',
+        message: "What is the engineer's employee ID?",
+        name: 'engID'
+    },
+    {
+        type: 'input',
+        message: "What is the engineer's email address?",
+        name: 'engEmail'
+    },
+    {
+        type: 'input',
+        message: "What is the engineer's GitHub username?",
+        name: 'engGitHub'
+    }
+];
+
+const questionsInt = [
+    {
+        type: 'input',
+        message: "What is the intern's name?",
+        name: 'intName'
+    },
+    {
+        type: 'input',
+        message: "What is the intern's employee ID?",
+        name: 'intID'
+    },
+    {
+        type: 'input',
+        message: "What is the intern's email address?",
+        name: 'intEmail'
+    },
+    {
+        type: 'input',
+        message: "What school is the intern from?",
+        name: 'intSchool'
     }
 ];
 
