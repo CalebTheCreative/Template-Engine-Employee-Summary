@@ -64,6 +64,18 @@ const userManagerInfo = [
     }
 ];
 
+const addEmployee = [
+    {
+        type: 'list',
+        message: 'What type of employee would you like to add to the roster?',
+        choices: [
+            'Engineer',
+            'Intern',
+            'None'
+        ]
+    }
+];
+
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
 // generate and return a block of HTML including templated divs for each employee!
