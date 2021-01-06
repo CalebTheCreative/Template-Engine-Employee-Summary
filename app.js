@@ -74,7 +74,8 @@ const addEmployee = [
             'Engineer',
             'Intern',
             'None'
-        ]
+        ],
+        name: "role"
     }
 ];
 
@@ -123,6 +124,47 @@ const questionsInt = [
         name: 'intSchool'
     }
 ];
+
+inquirer.prompt(askManager).then(res => {
+    if (res.isManager === true){
+        askManagerQuestions();
+    }
+    else{
+        askUserManagerQuestions();
+    }
+});
+
+const askManagerQuestions = () => {
+    inquirer.prompt(managerInfo).then(res => {
+        employeeRoster.push(new Manager(res.managerName, res.managerID, res.managerEmail, res.officeNumber));
+        addEmployeeQuestions();
+    });
+};
+
+const askUserManagerQuestions = () => {
+    inquirer.prompt(userManagerInfo).then(res => {
+        employeeRoster.push(new Manager(res.managerName, res.managerID, res.managerEmail, res.officeNumber));
+        addEmployeeQuestions();
+    });
+};
+
+const addEmployeeQuestions = () => {
+    inquirer.prompt(addEmployee).then(res => {
+        switch(res.role){
+            case "Engineer":
+                askQuestionsEng();
+                break;
+            case "Intern":
+                askQuestionsInt();
+                break;
+            default:
+                generateHTML();
+        }
+    });
+};
+
+
+
 
 // After the user has input all employees desired, call the `render` function (required
 // above) and pass in an array containing all employee objects; the `render` function will
