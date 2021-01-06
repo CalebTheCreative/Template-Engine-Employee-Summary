@@ -163,6 +163,20 @@ const addEmployeeQuestions = () => {
     });
 };
 
+const askQuestionsEng = () => {
+    inquirer.prompt(questionsEng).then(res => {
+        employeeRoster.push(new Engineer(res.engName, res.engID, res.engEmail, res.engGitHub));
+        addEmployeeQuestions();
+    });
+};
+
+const askQuestionsInt = () => {
+    inquirer.prompt(questionsInt).then(res => {
+        employeeRoster.push(new Intern(res.intName, res.intID, res.intEmail, res.intSchool));
+        addEmployeeQuestions();
+    });
+};
+
 
 
 
